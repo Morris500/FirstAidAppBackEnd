@@ -1,0 +1,23 @@
+{
+  "name": "first-aidapp",
+  "version": "1.0.0",
+  "description": "first-aid",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "morris back-end",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/language": "^6.5.0",
+    "axios": "^1.7.7",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "llamaai": "^1.0.4",
+    "mongoose": "^8.6.1",
+    "natural": "^8.0.1"
+  }
+}
