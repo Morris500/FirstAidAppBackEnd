@@ -21,7 +21,7 @@ app.use(bodyparser.urlencoded({extended: true}));
 const isFirstAidRelated = (input) => {
         const firstAidKeywords = [
           'first aid', 'cpr', 'bandage', 'burns', 'choking', 'bleeding', 'fracture', 'emergency', 'injury', 'wound',
-          'resuscitation', 'cuts', 'sprain', 'shock', 'poisoning'
+          'resuscitation', 'cuts', 'sprain', 'shock', 'poisoning', 'cut','scrapes','nosebleed','strain','insect bite','dog bite', 'stings','allergic reaction', 'reactions','fever','seizures','seizure','eye','eye injury','injuries','blood','burn','accident','leg','arm','broken','fingers','head','pain','bp','swollen','swell','feet','ache','stomach','itching','inflammation','inflamed inflame','asthma','breathe','panic attack','drowning','poisons','poison','splinter','electricution','electricity','shock','epileptic','labor','pregnancy','stroke','convulsion','faint','loss of conciousness','concussion','gunshot'
         ];
   // Check if any first aid keyword exists in the query
   return firstAidKeywords.some(keyword => input.toLowerCase().includes(keyword));
@@ -58,15 +58,15 @@ const isFirstAidRelated = (input) => {
 //    }
    
 //    main();
-   res.render( "index")
+   res.render( "index",{Message: ""})
 
  })
  .post(async (req, res) => {
     const input = req.body.input;
 
         if (!isFirstAidRelated(input)) {
-            return res.status(400).json({
-              message: 'Your query does not seem to be related to first aid. Please ask something related to first aid.'
+            return res.status(400).render("index",{
+              Message: `Your search "${input}" does not seem to be related to first aid. Please ask something related to first aid.`
             });
           } else {
       
@@ -79,6 +79,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
   const chatCompletion = await getGroqChatCompletion();
   // Print the completion returned by the LLM.
   console.log(chatCompletion.choices[0]?.message?.content || "");
+  res.render("index",{Message: chatCompletion.choices[0]?.message?.content || "" })
 }
 
  async function getGroqChatCompletion() {
@@ -86,7 +87,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
     messages: [
       {
         role: "user",
-        content: `provide detailed first aid information about: ${input}. only  respond if it is related to to first aid`,
+        content: `provide detailed and brief first aid information about: ${input} not more than 150 words. only respond if it is related to to first aid`,
       },
     ],
     model: "llama3-8b-8192",
