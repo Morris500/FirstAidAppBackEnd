@@ -9,7 +9,70 @@
     <p>  <%= Message %> </p>
     <form action="/" method="POST">
         <input type="text" name="input">
-        <button type="submit">submit</button>
+        <button onclick="getGeolocation()" type="submit">submit</button>
       </form>
+      <form action="/a" method="post">
+        <input id="lat" type="hidden" name="lat">
+        <input id="lon" type="hidden"  name="lon">
+        <button id="getLocation" type="submit">submit</button>
+
+      </form>
+
+
+      <script>
+
+//  if (navigator.geolocation) {
+//                 navigator.geolocation.getCurrentPosition(
+//                     (position) => {
+//                         const lat = position.coords.latitude;
+//                         const lng = position.coords.longitude;
+                        
+//                         function load () {
+//                             document.getElementById('lat').value = lat;
+//                         document.getElementById('lon').value = lng;
+
+//                         }})}
+        
+        // Function to get user's geolocation and send it to the server
+        document.getElementById('getLocation').addEventListener('click', function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                    
+                            document.getElementById('lat').value = lat;
+                        document.getElementById('lon').value = lng;
+
+                    
+                    
+                        console.log(`Latitude: ${lat}, Longitude: ${lng}`);
+
+                     //   Make the fetch request to the server
+                    //     fetch('/a', {
+                    //         method: 'POST',
+                    //         headers: {
+                    //             'Content-Type': 'application/json',
+                    //         },
+                    //         body: JSON.stringify({
+                    //             latitude: lat,
+                    //             longitude: lng,
+                    //         }),
+                    //     })
+                    //     .then((response) => {console.log(response)}
+                    //     )
+                    //     .then((data) => {console.log('Server response:', data)})
+                    //     .catch(error => console.log('Error sending location:', error));
+                     },
+                       (error) => {
+                         console.error("Error retrieving geolocation:", error);
+                          alert("Error retrieving geolocation: " + error.message);
+                     }
+                );
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        });
+    </script>
 </body>
 </html>
