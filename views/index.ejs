@@ -13,10 +13,7 @@
      
 </head>
 <body>
-    <div id="map"></div>
-
-
-
+    
     <h1>hello world!!!!!</h1>
     <p>  <%= Message %> </p>
     <form action="/" method="POST">
@@ -26,9 +23,18 @@
       
         <button id="getLocation" type="submit">submit</button>
 
+
+        <div id="map"></div>
+
+
       
       <script>
-           // Initialize the map and set its view to a default location (Lagos, Nigeria)
+          
+
+   
+        // Function to get user's geolocation and send it to the server
+        document.getElementById('getLocation').addEventListener('click', function () {
+             // Initialize the map and set its view to a default location (Lagos, Nigeria)
            const map = L.map('map').setView([6.5244, 3.3792], 13);
 
 // Add OpenStreetMap tile layer (free and open-source)
@@ -36,9 +42,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
-   
-        // Function to get user's geolocation and send it to the server
-        document.getElementById('getLocation').addEventListener('click', function () {
+
             if (navigator.geolocation) {
                 const geoOptions = {
                 enableHighAccuracy: true,   
