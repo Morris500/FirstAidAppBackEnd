@@ -3,13 +3,11 @@ import dotenv from "dotenv";
 import express from "express";
 import bodyparser from 'body-parser';
 import axios from "axios";
-import LlamaAI from "llamaai";
 import ejs from "ejs";
 import Groq from "groq-sdk";
 import cors from "cors";
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-//import alert from "alert";
+
+
 
 dotenv.config();
 const app = express();
@@ -21,6 +19,7 @@ app.use(cors());
 // const apiToken =process.env.API_TOKEN;
 // const llamaAPI = new LlamaAI(apiToken);
 
+app.use(express.static("public"));
 
 const isFirstAidRelated = (input) => {
         const firstAidKeywords = [
@@ -31,85 +30,8 @@ const isFirstAidRelated = (input) => {
   return firstAidKeywords.some(keyword => input.toLowerCase().includes(keyword));
 };
 app.post("/a", (req,res)=>{
-  const { lat, lon } = req.body;
-  const userCoords = [lat, lon];
 
-  console.log(`Received coordinates: Latitude - ${lat}, Longitude - ${lon}`);
-   // leaflet api
-   
-    // Initialize the map and set its view to a default location (Lagos, Nigeria)
-    const map = L.map('map').setView([6.5244, 3.3792], 13);
-
-    // Add OpenStreetMap tile layer (free and open-source)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
-
-        // Center the map on user's location
-        map.setView(userCoords, 14);
-
-        // Add a marker at the user's location
-        const userMarker = L.marker(userCoords).addTo(map)
-            .bindPopup('You are here!')
-            .openPopup();
-
-        // Query for nearby places (restaurants, for example)
-        queryNearbyPlaces(userCoords);
-    
-
-    // Function to query nearby places using OpenStreetMap's Nominatim API
-    function queryNearbyPlaces(userCoords) {
-        const query = 'restaurant';  // Change to the type of place you want to search for
-        const [lat, lon] = userCoords;
-
-        // Using Nominatim to search for nearby places
-        const url = `https://nominatim.openstreetmap.org/search?` +
-                    `q=${query}&format=json&limit=5&viewbox=${lon-0.05},${lat-0.05},${lon+0.05},${lat+0.05}`;
-
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                data.forEach(place => {
-                    const placeCoords = [place.lat, place.lon];
-                    const placeMarker = L.marker(placeCoords).addTo(map)
-                        .bindPopup(`${place.display_name}`)
-                        .openPopup();
-
-                    // Optionally, add a route to the first result found
-                    if (data.indexOf(place) === 0) {
-                        addRouteToDestination(userCoords, placeCoords);
-                    }
-                });
-            })
-            .catch(error => console.error('Error querying nearby places:', error));
-    }
-
-    // Function to add a route from user's location to the destination using OSRM API
-    function addRouteToDestination(origin, destination) {
-        const [originLat, originLng] = origin;
-        const [destLat, destLng] = destination;
-
-        // OSRM API for routing
-        const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${originLng},${originLat};${destLng},${destLat}?overview=full&geometries=geojson`;
-
-        fetch(osrmUrl)
-            .then(response => response.json())
-            .then(data => {
-                const route = data.routes[0].geometry;
-
-                // Add the route as a polyline to the map
-                const routeLine = L.geoJSON(route, {
-                    style: { color: 'blue', weight: 4 }
-                }).addTo(map);
-
-                // Zoom the map to fit the route
-                map.fitBounds(routeLine.getBounds());
-            })
-            .catch(error => console.error('Error fetching the route:', error));
-    }
-
-
-
+  
 
  
     // Now call a function to perform a nearby search using Google Places API
