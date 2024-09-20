@@ -1,0 +1,32 @@
+.mission-vission {
+    height: 100vh;
+    padding: 32px;
+    font-family: "Inter";
+}
+
+.mission-vission h2 {
+    font-family: "Inter";
+    color: var(--tertiary-color);
+    font-size: 36px;
+    
+}
+
+hr {
+    margin-top: -27px;
+    margin-bottom: 48px;
+    height: 10px;
+    background-color: #f9f9f9;
+    border-style: none;
+}
+
+.mission-vission h3 {
+    font-size: 34px;
+}
+.mission-vission p,li {
+    font-size: 24px;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 5px;
+}
