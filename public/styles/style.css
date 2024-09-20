@@ -14,6 +14,10 @@ body {
     padding: 0px;
     scroll-snap-align: center;
 }
+#map {
+    height: 500px;
+    width: 100%;
+}
 
 .nav-bar {
     position: fixed;
@@ -40,8 +44,9 @@ body {
     margin-left: 42px;
 }
 
-.logo p {
+.logo p{
     font-size: 40px;
+    display: inline;
 }
 
 .logo > img {
@@ -87,7 +92,13 @@ body {
 
 footer {
     background-color: var(--secondary-color);
-    height: 606px;
-    width: 100vw;
-    margin: -10px 0px -10px -10px;
+    height: 20%;
+    width: 100%;
+    margin: 0px -10px;
+    display: flex;
+    justify-content: center;
+}
+footer p{
+    font-size:2rem ;
+    margin: auto;
 }

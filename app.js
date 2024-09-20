@@ -29,9 +29,9 @@ const isFirstAidRelated = (input) => {
   // Check if any first aid keyword exists in the query
   return firstAidKeywords.some(keyword => input.toLowerCase().includes(keyword));
 };
-app.post("/a", (req,res)=>{
+app.get("/about", (req,res)=>{
 
-  
+  res.render("about")
 
  
     // Now call a function to perform a nearby search using Google Places API
