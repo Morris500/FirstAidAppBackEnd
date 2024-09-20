@@ -1,19 +1,9 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-      <!-- Leaflet CSS -->
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<%- include('partials/header') %>
 
-      <!-- Leaflet JS  -->
-      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> 
-     
-<link rel="stylesheet" href="/style.css">
-     
-</head>
-<body>
-    
+    <div id="map"></div>
+
+
+
     <h1>hello world!!!!!</h1>
     <p>  <%= Message %> </p>
     <form action="/" method="POST">
@@ -22,10 +12,6 @@
       </form>
       
         <button id="getLocation" type="submit">submit</button>
-
-
-        <div id="map"></div>
-
 
       
       <script>
@@ -181,5 +167,4 @@ console.log(routeLine);
         });
     </script>
      
-</body>
-</html>
+     <%- include('partials/footer') %>

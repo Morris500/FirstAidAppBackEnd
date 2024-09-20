@@ -1,0 +1,79 @@
+.diagnosis-section {
+    height: 100vh;
+    /* background: #000; */
+    margin-top: -10vh;
+    scroll-snap-align: start;
+}
+
+.diagnosis-section #list {
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    overflow: scroll;
+    justify-content: center;
+    gap: 5px;
+}
+
+.diagnosis-section #list .item {
+    border: 2.5px black solid;
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-family: "Inter";
+    font-weight: 500;
+    color: black;
+    text-decoration-style: none;
+}
+
+
+.diagnosis-section #list .item:hover {
+    cursor: pointer;
+    background-color: black;
+    border-color: white;
+    color: white;
+    scale: 1.5;
+    transition: all ease-in 200ms;
+}
+
+.diagnosis-section #list a .item,
+.diagnosis-section #list a:any-link .item,
+.diagnosis-section #list a:link .item  {
+    display: block;
+    text-decoration: none;
+    text-decoration-style: none;
+}
+
+.descriptive-images-container {
+    width: 100%;
+    height: 70vh;
+}
+
+.img_container {
+    height: 100%;
+    width: fit-content;
+    position: relative;
+}
+
+.img_container p {
+    position: absolute;
+    margin-top: -70px;
+    color: white;
+    font-family: "Inter";
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+#diagnosis-images-list {
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: 0px;
+    display: flex;
+    gap: 10px;
+}
+
+#diagnosis-images-list img {
+    height: 100%;
+    width: 400px;
+}
