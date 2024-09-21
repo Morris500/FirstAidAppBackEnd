@@ -24,7 +24,7 @@ app.use(express.static("public"));
 const isFirstAidRelated = (input) => {
         const firstAidKeywords = [
           'first aid', 'cpr', 'bandage', 'burns', 'choking', 'bleeding', 'fracture', 'emergency', 'injury', 'wound',
-          'resuscitation', 'cuts', 'sprain', 'shock', 'poisoning', 'cut','scrapes','nosebleed','strain','insect bite','dog bite', 'stings','allergic reaction', 'reactions','fever','seizures','seizure','eye','eye injury','injuries','blood','burn','accident','leg','arm','broken','fingers','head','pain','bp','swollen','swell','feet','ache','stomach','itching','inflammation','inflamed inflame','asthma','breathe','panic attack','drowning','poisons','poison','splinter','electricution','electricity','shock','epileptic','labor','pregnancy','stroke','convulsion','faint','loss of conciousness','concussion','gunshot','hand','heart','attack','gun'
+          'resuscitation', 'cuts', 'sprain', 'shock', 'poisoning', 'cut','scrapes','nosebleed','strain','insect bite','dog bite', 'stings','allergic reaction', 'reactions','fever','seizures','seizure','eye','eye injury','injuries','blood','burn','accident','leg','arm','broken','fingers','head','pain','bp','swollen','swell','feet','ache','stomach','itching','inflammation','inflamed inflame','asthma','breathe','panic attack','drowning','poisons','poison','splinter','electricution','electricity','shock','epileptic','labor','pregnancy','stroke','convulsion','faint','loss of conciousness','concussion','gunshot','hand','heart','attack','gun','drown'
         ];
   // Check if any first aid keyword exists in the query
   return firstAidKeywords.some(keyword => input.toLowerCase().includes(keyword));
@@ -73,12 +73,19 @@ app.get("/about", (req,res)=>{
    }
 
 )
+app.get('/Asthma',(req, res)=>{
+res.render('asthma')
+});
+app.get('/Heart%20Attack',(req, res)=>{
+  res.render('heart')
+});app.get('/Shock',(req, res)=>{
+  res.render('shock')
+});
 
  app.route("/")
  .get((req, res) => {
   
-  
-  
+
    res.render( "index",{Message: ""})
 
  })
@@ -100,7 +107,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
     messages: [
       {
         role: "user",
-        content: `provide detailed and brief first aid information about: ${input} not more than 150 words. only respond if it is related to to first aid`,
+        content: `provide very detailed and brief technique on how to perform first aid about: ${input} not more than 150 words. only respond if it is related to to first aid`,
       },
     ],
     model: "llama3-8b-8192",
@@ -110,66 +117,26 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 }
 
 async function main() {
-  const chatCompletion = await getGroqChatCompletion();
+  try {
+    const chatCompletion = await getGroqChatCompletion()
   // Print the completion returned by the LLM.
   console.log(chatCompletion.choices[0]?.message?.content || "");
-  res.render("index",{Message: chatCompletion.choices[0]?.message?.content || "" })
 
-main();
+    res.render("index",{Message: chatCompletion.choices[0]?.message?.content || "" })
+
+  
+  } catch (error) {
+    
+    res.render("index",{Message: "HTTP_ERROR 408 Request Timeout Unable to connect server"})
+  }
      }
-
-
-
-
-
-//     // Build the Request
-// const apiRequestJson = {
-//     "messages": [
-//         {"role": "user", "content": input},
-//     ],
-//     "functions": [
-//         {
-//             "name": "get_current_weather",
-//             "description": "Get the current weather in a given location",
-//             "parameters": {
-//                 "type": "object",
-//                 "properties": {
-//                     "location": {
-//                         "type": "string",
-//                         "description": "The city and state, e.g. San Francisco, CA",
-//                     },
-//                     "days": {
-//                         "type": "number",
-//                         "description": "for how many days ahead you wants the forecast",
-//                     },
-//                     "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]},
-//                 },
-//             },
-//             "required": ["location", "days"],
-//         }
-//     ],
-//     "stream": false,
-//     "function_call": "get_current_weather",
-//    };
- 
-//    // Execute the Request
-//     llamaAPI.run(apiRequestJson)
-//       .then((response) => {
-//         // Process response
-//         console.log(response);
-        
-
-//       })
-//       .catch(error => {
-//         // Handle errors
-//         console.log(error);
-        
-//       });
- 
+     main();
           }
  })
  
-
+app.get('*', (req, res)=>{
+  res.render("404")
+})
 
 
 app.listen(port, (req, res)=>{console.log("app running on port 3000")

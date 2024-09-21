@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #000000;
+    ;
+} */
+
+header {
+    background-color: #004859;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-content {
+    max-width: 800px;
+    left: 65px;
+}
+
+.back-link {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 4px 20px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-white {
+    background-color: white;
+    color: #333;
+}
+
+.btn-blue {
+    background-color: #348B9F;
+    color: white;
+}
+
+.header-icon img {
+    width: 159px;
+    height: 142.12px;
+    border: 6px;
+}
+
+/**.heart-icon {
+    width: 250px;
+    height: auto;
+}
+
+svg {
+    fill: none;
+    stroke: #89b0b8;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}**/
+
+.content {
+    padding: 40px 20px;
+    width: 1178px;
+    margin: 0 auto;
+    font-family: 'Cactus Classical Serif';
+    left: 106px;
+}
+
+.content h2 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    line-height: 67.32px;
+    font-weight: 400;
+}
+
+.content p {
+    font-size: 24px;
+    line-height: 29.38px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.content ul {
+    margin-left: 20px;
+    list-style-type: disc;
+    font-size: 24px;
+    line-height: 29.38px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.cta {
+    right: 100px;
+    /**display: flex;**/
+    /**justify-content: center;**/
+    /**padding-right: 250px;
+    padding-left: 25px;
+    padding-top: 50px;
+    padding-bottom: 50px**
+    padding: 1px 0px;**/
+    /**background-color: white;**/
+    display: grid;
+    place-items: center;
+}
+
+.btn-large {
+    /**padding: 25px 50px;**/
+    /**padding-right: 250px;
+    padding-left: 25px;
+    padding-top: 50px;
+    padding-bottom: 50px;**/
+    left: 650px;
+    width: 1026px;
+    height: 241px;  
+    font-size: 50px;
+    background-color: #004859;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+   
+}
