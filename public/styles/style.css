@@ -116,7 +116,7 @@ footer p{
     font-size:1.5rem ;
     margin: auto;
 }
-@media (max-width: 640px) {
+/* @media (max-width: 640px) {
     body{
         height: 100%;
         width: 100%;
@@ -131,10 +131,10 @@ footer p{
         background-color: var(--secondary-color);
         height: 10%;
         width: 100%;
-        /* margin: 0px -10px; */
-        /* display: flex;
-        justify-content: center; */
-    }
+         margin: 0px -10px; 
+         display: flex;
+        justify-content: center; 
+    } 
     .nav-bar {
         position: fixed;
         right: 0;
@@ -150,4 +150,487 @@ footer p{
         z-index: 10000;
     }
     
+} */
+
+
+
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/****************************************************************START************************************************************************************************************************* */
+/*.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #1c8c8c;
+}
+
+.logo span {
+    color: red;
+}
+.menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+
+}
+/* ****************************************************************END************************************************************************************************************************* */
+
+/* ****************************************************************START*************************************************************************************************************************  */
+/*.hero-section {
+    text-align: center;
+    background: url('../images/bg_img.png') no-repeat center center/cover;
+    padding: 140px 20px;
+    color: white;
+}
+
+.hero-section h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.hero-section p {
+    margin-top: 35px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+.input-container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.chat-form{
+    display: inline-block
+}
+
+.chat-btn {
+    padding: 15px 20px;
+    border: 2px solid #1c8c8c;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.chat-btn i {
+    font-size: 20px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.chat-btn:hover {
+    background-color: #1c8c8c;
+    color: white;
+    border-color: #1c8c8c;
+}
+
+.chat-btn:hover i {
+    color: white;
+}
+/* ****************************************************************END*************************************************************************************************************************  */
+
+/* ****************************************************************START*************************************************************************************************************************  */
+/*.categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    flex-wrap: wrap;
+}
+
+.categories button{
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.categories button:hover{
+    background-color: #1c8c8c;
+    color: white;
+}
+/* ****************************************************************END*************************************************************************************************************************  */
+
+/* ****************************************************************START*************************************************************************************************************************  */
+/*.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.slider-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    /* display: flex;
+    transition: transform 0.4s ease-in-out;
+    width: max-content;
+    scroll-behavior: smooth; 
+}
+
+/*.slider-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-content {
+    display: flex;
+    gap: 15px;
+}
+
+.aid-card {
+    width: 150px;
+    height: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 180PX;
+    margin-right: 15px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.aid-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.aid-card h3 {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+}
+
+.left-btn {
+    left: 0;
+}
+
+.right-btn {
+    right: 0;
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ****************************************************************END*************************************************************************************************************************  */
+
+/* ****************************************************************START*************************************************************************************************************************  */
+/*.mission-vision-values {
+    background-color: #f9f9f9;
+    padding: 80px;
+    border-top: 1px solid #ddd;
+}
+
+.mission-vision-values h2 {
+    color: #1c8c8c;
+    font-size: 28px;
+    border-bottom: 2px solid #1c8c8c;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.mission-vision-values h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.mission-vision-values p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.mission-vision-values ul {
+    list-style: none;
+    padding-left: 0;
+    line-height: 1.6;
+}
+
+.mission-vision-values li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.mission-vision-values li strong {
+    color: #333;
+}
+
+/* ****************************************************************END*************************************************************************************************************************  */
+
+/* ****************************************************************START*************************************************************************************************************************  */
+/*.footer {
+    background-color: #004d5e;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* ****************************************************************END*************************************************************************************************************************  */
+
+/* Add these styles for the loading screen at the end of your CSS file */
+/*#loading-screen {
+    display: none;
+     Hidden by default 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.loading .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+.loading p {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+} */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+
+    .language-selector{
+        display: none;
+    }
+    .logo h1 {
+        font-size: 20px;
+    } 
+
+    .menu a {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    .hero-section {
+        padding: 80px 10px;
+    }
+
+    .hero-section h2 {
+        font-size: 28px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+    }
+
+    .categories {
+        flex-direction: column;
+    }
+
+    .categories button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .aid-card {
+        width: 120px;
+    }
+
+    .mission-vision-values {
+        padding: 40px 20px;
+    }
+
+    .mission-vision-values h2 {
+        font-size: 24px;
+    }
+
+    .mission-vision-values h3 {
+        font-size: 18px;
+    }
+
+    .mission-vision-values p,
+    .mission-vision-values li {
+        font-size: 14px;
+    }
+    .cardInfo{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    
+    .language-selector{
+        display: none;
+    }
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .menu a {
+        margin-left: 15px;
+    }
+
+    .hero-section {
+        padding: 100px 20px;
+    }
+
+    .hero-section h2 {
+        font-size: 34px;
+    }
+
+    .hero-section p {
+        font-size: 17px;
+    }
+
+    .categories button {
+        font-size: 14px;
+    }
+
+    .aid-card {
+        width: 140px;
+    }
+
+    .mission-vision-values {
+        padding: 60px 40px;
+    }
+
+    .mission-vision-values h2 {
+        font-size: 26px;
+    }
+
+    .mission-vision-values h3 {
+        font-size: 19px;
+    }
+
+    .mission-vision-values p,
+    .mission-vision-values li {
+        font-size: 15px;
+    }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+
+    .hero-section {
+        padding: 140px 50px;
+    }
+
+    .hero-section h2 {
+        font-size: 40px;
+    }
+
+    .hero-section p {
+        font-size: 18px;
+    }
+
+    .categories button {
+        font-size: 16px;
+    }
+
+    .aid-card {
+        width: 180px;
+    }
+
+    .mission-vision-values {
+        padding: 80px 100px;
+    }
+
+    .mission-vision-values h2 {
+        font-size: 28px;
+    }
+
+    .mission-vision-values h3 {
+        font-size: 20px;
+    }
+
+    .mission-vision-values p,
+    .mission-vision-values li {
+        font-size: 16px;
+    }
 }

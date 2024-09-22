@@ -116,6 +116,7 @@ button img {
     border-image: linear-gradient(45deg, white, var(--tertiary-color)) 1;
     border-radius: 15px;
     border: 2px solid;
+    width: 90%;
 }
 
 .chat-section input {
@@ -136,9 +137,14 @@ button img {
     font-family: "Inter";
     font-size: 20px;
 }
+.cardInfo{
+    display: flex;
+    justify-content: center;
+}
  .cardInfo p {
     display: flex;
     justify-content: center;
+    width: 100%;
    
     /* padding: 2px 16px; */
     background-color: black;
@@ -171,6 +177,11 @@ button img {
         font-family: "Inter";
         font-size: 30px;
         width: 90%;
+    }
+    .chat-section input{
+        width: 90%;
+        display: flex;
+        justify-content: center;
     }
     
   }
