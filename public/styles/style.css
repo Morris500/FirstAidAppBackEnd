@@ -120,7 +120,34 @@ footer p{
     body{
         height: 100%;
         width: 100%;
-        background-color: green;
-        color: red;
+        
+        
     }
+    footer p{
+        margin: auto;
+        font-size: 1rem;
+    }
+    footer {
+        background-color: var(--secondary-color);
+        height: 10%;
+        width: 100%;
+        /* margin: 0px -10px; */
+        /* display: flex;
+        justify-content: center; */
+    }
+    .nav-bar {
+        position: fixed;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 74px;
+        align-items: center;
+        background-color: #f5f5f5;
+        margin-left: -5px;
+        margin-right: -5px;
+        z-index: 10000;
+    }
+    
 }

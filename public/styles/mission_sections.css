@@ -1,5 +1,5 @@
 .mission-vission {
-    height: 100vh;
+    /* height: 100vh; */
     padding: 32px;
     font-family: "Inter";
     margin-bottom: 2rem;
@@ -9,6 +9,7 @@
     font-family: "Inter";
     color: var(--tertiary-color);
     font-size: 36px;
+    margin-top: 50px;
     
 }
 

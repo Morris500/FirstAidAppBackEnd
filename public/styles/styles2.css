@@ -11,6 +11,9 @@
     ;
 } */
 
+body{
+    width: 100%;
+}
 header {
     background-color: #004859;
     color: white;
@@ -19,10 +22,11 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
 .header-content {
-    max-width: 800px;
+    max-width:100%;
     left: 65px;
 }
 
@@ -83,7 +87,7 @@ svg {
 
 .content {
     padding: 40px 20px;
-    width: 1178px;
+    width:100%;
     margin: 0 auto;
     font-family: 'Cactus Classical Serif';
     left: 106px;
