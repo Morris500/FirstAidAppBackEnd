@@ -10,7 +10,7 @@
             <h1>EMPOWERING AID, INSTANT RELIEF...</h1>
             <p>Insta-Aid your virtual lifeline!</p>
             <div class="cardInfo" >
-                <p>  
+                <p id="ptag">  
                     <%= Message %> 
                 </p>
             </div>
@@ -23,11 +23,11 @@
                     
                     <div class="input-container">
                        
-                        <form action="/" method="POST">
+                        <form id="myform" action="/" method="POST">
                             <input type="text" name="input" id="insta_chat" placeholder="Chat with Insta...">   
                     </div>
                 </div>
-                <button id="search" type="submit"><img src="images/send_icon.png" alt=""></button>
+                <button type="submit"  ><img src="images/send_icon.png" alt=""></button>
             </form>
             </div>
         </div>
@@ -36,19 +36,24 @@
 </section>
 
 <!-- Diagnosis Section -->
-<section id="image" class="diagnosis-section">
+<section id="name" class="diagnosis-section">
     <ul id="list"></ul>
     <div  class="descriptive-images-container">
         <ul id="diagnosis-images-list"></ul>
     </div>
 </section>
+
 <script>
-    const boy = document.getElementById('search').addEventListener('click', function () {
-       const tag = document.getElementById('image')
-       console.log(tag);
-       console.log(boy);
-       tag.classList.replace('diagnosis-section','newdiagnosis-section')
-    });
+    // function search() {
+    //     const element =document.querySelector("tag");
+    //     element.classList.replace("diagnosis-section","newdiagnosis-section");
+    // }
+    //  document.getElementById('search').addEventListener('click', function () {
+    //    const tag = document.getElementById('image')
+    //    console.log(tag);
+    //    console.log(boy);
+    //    tag.classList.replace('diagnosis-section','newdiagnosis-section')
+    // });
    
     
 </script>

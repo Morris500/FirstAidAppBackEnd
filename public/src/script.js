@@ -27,13 +27,34 @@ const text_list = ["CPR", "Bleeding", "seizures", "Asthma", "Snake Bite", "Heart
 
 
 for (var i = 0; i < images_list.length; i++) {
-    console.log(images_list)
+    // console.log(images_list)
     const img_item = `<div class='img_container'><img src="${images_list[i]}"/><p>${text_list[i].toUpperCase()}</P><div>`
     diagnosis_images_list.innerHTML += img_item;
 }
 
+// function search() {
+//     const element =document.querySelector("tag");
+//     element.classList.replace("diagnosis-section","newdiagnosis-section");
+//     console.log(element);
+    
+// }
 
-          
+
+
+       const element = document.getElementById('name');
+       console.log(element);
+       
+      const p = document.getElementById("ptag").innerHTML;
+console.log(p.length);
+
+    
+if (p.length > 41) {
+    element.classList.replace('diagnosis-section','newdiagnosis-section');
+
+}
+       
+    
+      
 
    
 // // Function to get user's geolocation and send it to the server
