@@ -140,11 +140,12 @@ button img {
 .cardInfo{
     display: flex;
     justify-content: center;
+    width: 100%;
 }
  .cardInfo p {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 95%;
    
     /* padding: 2px 16px; */
     background-color: black;

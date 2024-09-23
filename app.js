@@ -24,7 +24,7 @@ app.use(express.static("public"));
 const isFirstAidRelated = (input) => {
         const firstAidKeywords = [
           'first aid', 'cpr', 'bandage', 'burns', 'choking', 'bleeding', 'fracture', 'emergency', 'injury', 'wound',
-          'resuscitation', 'cuts', 'sprain', 'shock', 'poisoning', 'cut','scrapes','nosebleed','strain','insect bite','dog bite', 'stings','allergic reaction', 'reactions','fever','seizures','seizure','eye','eye injury','injuries','blood','burn','accident','leg','arm','broken','fingers','head','pain','bp','swollen','swell','feet','ache','stomach','itching','inflammation','inflamed inflame','asthma','breathe','panic attack','drowning','poisons','poison','splinter','electricution','electricity','shock','epileptic','labor','pregnancy','stroke','convulsion','faint','loss of conciousness','concussion','gunshot','hand','heart','attack','gun','drown'
+          'resuscitation', 'cuts', 'sprain', 'shock', 'poisoning', 'cut','scrapes','nosebleed','strain','insect bite','dog bite', 'stings','allergic reaction', 'reactions','fever','seizures','seizure','eye','eye injury','injuries','blood','burn','accident','leg','arm','broken','fingers','head','pain','bp','swollen','swell','feet','ache','stomach','itching','inflammation','inflamed inflame','asthma','breathe','panic attack','drowning','poisons','poison','splinter','electricution','electricity','shock','epileptic','labor','pregnancy','stroke','convulsion','faint','loss of conciousness','concussion','gunshot','hand','heart','attack','gun','drown','heart attack','attack', 'labour'
         ];
   // Check if any first aid keyword exists in the query
   return firstAidKeywords.some(keyword => input.toLowerCase().includes(keyword));
@@ -107,7 +107,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
     messages: [
       {
         role: "user",
-        content: `provide very detailed and brief technique on how to perform first aid about: ${input} not more than 150 words. only respond if it is related to to first aid`,
+        content: `provide very detailed, brief, step by step technique on how to perform first aid about: ${input} not more than 150 words. only respond if it is related to to first aid`,
       },
     ],
     model: "llama3-8b-8192",
